@@ -1,4 +1,4 @@
-package ru.itmo;
+package ru.itmo.javadoc;
 
 import java.io.*;
 import java.net.Socket;
@@ -20,7 +20,7 @@ public class ReadWrite implements AutoCloseable{
         try {
             return (Message) input.readObject();
         } catch (ClassNotFoundException e) {
-            System.out.println("Класс ru.itmo.Message не найден");
+            System.out.println("Класс ru.itmo.javadoc.Message не найден");
         }
         return null;
     }
