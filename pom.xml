@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- комментарий Ctrl + / -->
+
+
+    <!-- 1. Обязательная информация GAV -->
+    <groupId>ru.itmo</groupId> <!-- уникальный идентификатор группы -->
+    <artifactId>maven-lesson</artifactId> <!-- уникальный идентификатор проекта внутри группы -->
+    <version>1.0-SNAPSHOT</version> <!-- текущая версия проекта -->
+
+    <!-- 2. Дополнительная информация  -->
+    <name>Maven Lesson</name> <!-- название проекта -->
+    <description>Project about...</description> <!-- описание проекта в нескольких предложениях -->
+    <url>https://maven-lesson-link.com</url> <!-- ссылка на сайт проекта -->
+
+    <!-- 3. Тип файла, который будет доступен в результате сборки -->
+    <!-- 3.1. jar (по умолчанию) /
+         3.2. war - jar + сервлеты, статические файлы фронт-энд и т.п /
+         3.3. ear - содержит javaEE модули /
+         3.4. pom - для родительских pom файлов -->
+    <!-- jar, war и ear - zip архивы, в настоящее время принято собирать jar вместо war и ear,
+         если проект построен на Spring Framework -->
+    <packaging>jar</packaging>
+
+    <!-- 4. Свойства проекта -->
+    <properties>
+        <!-- локальные переменные для последующего использования в pom файле -->
+        <lib.version>3.8</lib.version>
+
+        <!-- версия компилятора -->
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 5. Репозитории. В репозиториях хранятся артефакты - jar и пр. архивы -->
+    <!-- 5.1. Локальный (на каждого пользователя) - /.m2/repository -->
+    <!-- 5.2. Центральный (глобальный) -->
+    <!-- 5.3. Корпоративный -->
+    <!--
+    <repositories>
+        <repository>
+            <id>company-id-01</id>
+            <url>ссылка на репозиторий</url>
+        </repository>
+    </repositories>
+    -->
+
+    <!-- 6. Зависимости -->
+
+
+    <!-- 7. Плагины -->
+
+
+
+</project>
