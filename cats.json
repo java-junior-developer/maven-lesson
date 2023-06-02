@@ -1,0 +1,107 @@
+[
+  {
+    "uniqueId": 1,
+    "name": "Roxxy",
+    "birth": "2021-04-02",
+    "color": "GRAY",
+    "category": {
+      "name": "mestizos",
+      "description": "are less aggressive than many purebred cats"
+    },
+    "habits": [
+      {
+        "name": "children",
+        "description": "likes children",
+        "good": true
+      },
+      {
+        "name": "other cats",
+        "description": "doesn't like other cats",
+        "good": false
+      }
+    ]
+  },
+  {
+    "uniqueId": 2,
+    "name": "Luna",
+    "birth": "2023-02-02",
+    "color": "WHITE",
+    "category": {
+      "name": "purebred",
+      "description": "are relatively rare"
+    },
+    "habits": [
+      {
+        "name": "other cats",
+        "description": "doesn't like other cats",
+        "good": false
+      }
+    ]
+  },
+  {
+    "uniqueId": 3,
+    "name": "Tom",
+    "birth": "2021-10-02",
+    "color": "BLACK",
+    "category": {
+      "name": "purebred",
+      "description": "are relatively rare"
+    },
+    "habits": [
+      {
+        "name": "outside",
+        "description": "must go outside every day",
+        "good": true
+      },
+      {
+        "name": "children",
+        "description": "likes children",
+        "good": true
+      }
+    ]
+  },
+  {
+    "uniqueId": 3,
+    "name": "Loki",
+    "birth": "2020-05-02",
+    "color": "GRAY",
+    "category": {
+      "name": "mestizos",
+      "description": "are less aggressive than many purebred cats"
+    },
+    "habits": [
+      {
+        "name": "outside",
+        "description": "must go outside every day",
+        "good": true
+      },
+      {
+        "name": "other cats",
+        "description": "doesn't like other cats",
+        "good": false
+      }
+    ]
+  },
+  {
+    "uniqueId": 4,
+    "name": "Abbey",
+    "birth": "2019-12-02",
+    "color": "WHITE",
+    "category": {
+      "name": "mestizos",
+      "description": "are less aggressive than many purebred cats"
+    },
+    "habits": [
+      {
+        "name": "outside",
+        "description": "must go outside every day",
+        "good": true
+      },
+      {
+        "name": "children",
+        "description": "likes children",
+        "good": true
+      }
+    ]
+  }
+]

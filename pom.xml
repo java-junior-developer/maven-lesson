@@ -107,7 +107,8 @@
     <!-- 7. Плагины -->
 
     <!-- Основные фазы сборки (основные этапы жизненного цикла Maven проекта): -->
-    <!-- 1. clean - удаление папки target со всем ее содержимым (фаза может выполняться самостоятельно или
+    <!-- 1. clean - удаление папки target со всем ее содержимым
+            (фаза может выполняться самостоятельно или
             предшествовать другим фазам, например compile)  -->
     <!-- 2. validate - проверка исходного кода  -->
     <!-- 3. compile - компиляция (фазе предшествуют фазы clean и validate)  -->
@@ -162,7 +163,7 @@
                     <transformers>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>ru.ifmo.lesson.Application</mainClass>
+                            <mainClass>ru.itmo.Application</mainClass>
                         </transformer>
                     </transformers>
                 </configuration>
