@@ -29,7 +29,7 @@
     <!-- 4. Свойства проекта -->
     <properties>
         <!-- локальные переменные для последующего использования в pom файле -->
-        <lib.version>3.8</lib.version>
+        <jackson.version>2.15.2</jackson.version>
 
         <!-- версия компилятора -->
         <maven.compiler.source>18</maven.compiler.source>
@@ -80,6 +80,28 @@
 
         <!-- <scope>runtime</scope> зависимость доступна только во время выполнения.
                                     Нет прямого доступа к коду библиотеки (import невозможен) при написании кода -->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version> <!-- ${имя переменной} -->
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
     </dependencies>
 
     <!-- 7. Плагины -->
@@ -138,7 +160,8 @@
                 <configuration> <!-- дополнительные настройки плагина -->
                     <!-- чтобы jar стал исполняемым необходимо указать ссылку на класс с точкой входа-->
                     <transformers>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                        <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                             <mainClass>ru.ifmo.lesson.Application</mainClass>
                         </transformer>
                     </transformers>
