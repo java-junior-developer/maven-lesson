@@ -15,6 +15,11 @@ public class JDBSLesson {
         // Statement -> PreparedStatement
         // ResultSet
         createTable();
+
+        Category category = new Category();
+        category.setName("коты");
+        category.setDescription("коты");
+        insert(category);
     }
 
     private static void createTable(){
