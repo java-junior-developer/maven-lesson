@@ -1,9 +1,8 @@
 package ru.itmo.jdbs;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import ru.itmo.cats.Category;
+
+import java.sql.*;
 
 public class JDBSLesson {
     private static final String CONNECTION_STR = "jdbc:postgresql://localhost:5432/lessons";
@@ -15,7 +14,7 @@ public class JDBSLesson {
         // Connection
         // Statement -> PreparedStatement
         // ResultSet
-
+        createTable();
     }
 
     private static void createTable(){
@@ -45,6 +44,29 @@ public class JDBSLesson {
             System.out.println("Ошибка подключения " + e.getErrorCode());
         }
     }
+
+    private static void insert(Category category) {
+        String insertString = "INSERT INTO tb_categories" +
+                "(name, description) VALUES (?, ?)";
+
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        try (Connection connection = DriverManager.getConnection(CONNECTION_STR, LOGIN, PWD)){
+            try (PreparedStatement prepared = connection.prepareStatement(insertString)){
+                prepared.setString(1, category.getName());
+                prepared.setString(2, category.getDescription());
+                System.out.println(prepared.executeUpdate());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 
 
 
