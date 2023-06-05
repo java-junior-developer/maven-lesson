@@ -3,6 +3,7 @@ package ru.itmo.jdbs;
 import ru.itmo.cats.Category;
 
 import java.sql.*;
+import java.util.HashSet;
 
 public class JDBSLesson {
     private static final String CONNECTION_STR = "jdbc:postgresql://localhost:5432/lessons";
@@ -71,6 +72,36 @@ public class JDBSLesson {
         }
     }
 
+    private static HashSet<Category> getCategories(){
+        String selectSql = "SELECT id, name, description FROM tb_categories";
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        HashSet<Category> categories = new HashSet<>();
+        try (Connection connection = DriverManager.getConnection(CONNECTION_STR, LOGIN, PWD)){
+            try (Statement statement = connection.createStatement()){
+                try (ResultSet resultSet = statement.executeQuery(selectSql)){
+                    while (resultSet.next()) {
+                        String name = resultSet.getString("name");
+                        String description = resultSet.getString("description");
+                        int id = resultSet.getInt("id");
+                        Category category = new Category();
+                        category.setName(name);
+                        category.setDescription(description);
+                        categories.add(category);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Ошибка подключения " + e.getMessage());
+            System.out.println("Ошибка подключения " + e.getSQLState());
+            System.out.println("Ошибка подключения " + e.getErrorCode());
+        }
+        return categories;
+    }
 
 
 
